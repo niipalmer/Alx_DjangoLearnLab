@@ -1,0 +1,14 @@
+# Database Interaction with the Django ORM
+     
+  # Retrieving all books
+books = Book.objects.all()
+
+  # filtering books by author
+books_by_author = Book.objects.filter(author='John Doe')
+
+# Ordering books by published date
+books_ordered = Book.objects.order_by('published_date')
+
+#Creating a new book
+new_book = Book(title='New Book', author='Jane Smith',  published_dat='2023-01-01')
+new_book.save()
