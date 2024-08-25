@@ -1,15 +1,13 @@
 # Delete Operation
 
-### __Instruction__ Delete the book you created and confirm the deletion by trying to retrieve all books again.
+## Command
+To delete the book titled "Nineteen Eighty-Four" and confirm the deletion, execute the following command in the Django shell:
 
-```from bookshelf.models import Book```
-command:
+```python
+from bookshelf.models import Book
+book = Book.objects.get(title='Nineteen Eighty-Four', author="George Orwell", publication_year=1949)
+book.delete()
 
-
-```book.delete()```
-
-output:
-
-```sh
-(1, {'bookshelf.Book': 1})
-```
+# Confirming deletion by trying to retrieve all books
+books = Book.objects.all()
+print(books)
